@@ -8,10 +8,6 @@ import (
     "strings"
 )
 
-const (
-    Key = "whoami"
-)
-
 var (
     logger *log.Logger
 )
