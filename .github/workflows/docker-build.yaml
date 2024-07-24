@@ -45,7 +45,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        no-cache: true
+        no-cache: false
         tags: |
           ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ steps.image_tag.outputs.IMAGE_TAG }}
           ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ steps.image_tag.outputs.BRANCH_TAG }}
