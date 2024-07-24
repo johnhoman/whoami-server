@@ -1,7 +1,7 @@
 on:
   push:
 env:
-  REGISTRY: registry-1.docker.io
+  REGISTRY: docker.io
   REPOSITORY_NAME: jackhoman/whoami-server
   GITHUB_HEAD_REF: ${{ github.head_ref }}
   GITHUB_REF_NAME: ${{ github.ref }}
@@ -47,9 +47,9 @@ jobs:
         push: true
         no-cache: true
         tags: |
-          ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ steps.image_tag.outputs.IMAGE_TAG }}
-          ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:${{ steps.image_tag.outputs.BRANCH_TAG }}
-          ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME }}:latest
+          ${{ env.REPOSITORY_NAME }}:${{ steps.image_tag.outputs.IMAGE_TAG }}
+          ${{ env.REPOSITORY_NAME }}:${{ steps.image_tag.outputs.BRANCH_TAG }}
+          ${{ env.REPOSITORY_NAME }}:latest
         context: .
         file: ./Dockerfile
         cache-from: type=local,src=/tmp/.buildx-cache
