@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Create Image Tag
       id: image_tag
       run: |
@@ -42,7 +42,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USER }}
         password: ${{ secrets.DOCKERHUB_PASS }}
     - name: Build & Push ${{ env.REPOSITORY_NAME }} image
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@
       with:
         push: true
         no-cache: false
