@@ -42,7 +42,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USER }}
         password: ${{ secrets.DOCKERHUB_PASS }}
     - name: Build & Push ${{ env.REPOSITORY_NAME }} image
-      uses: docker/build-push-action@
+      uses: docker/build-push-action@v5
       with:
         push: true
         no-cache: false
